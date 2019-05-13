@@ -8,9 +8,12 @@ public class Datum {
 	   * Constructor
 	   */
   	public Datum(int dag, int maand, int jaar){
-  		this.dag = dag;
-  		this.maand = maand;
-  		this.jaar = jaar;
+  		this();
+		if (bestaatDatum(dag, maand, jaar)){
+			this.dag = dag;
+			this.maand = maand;
+			this.jaar = jaar;
+		}
 	}
 
 	public Datum(){
@@ -22,11 +25,11 @@ public class Datum {
 	public boolean bestaatDatum(int dag, int maand, int jaar){
 		if (dag >= 1 && dag <= 31 && maand >= 1 && maand <= 12 && jaar >= 1900 && jaar <= 2100) {
 			if ((maand == 2 && dag <= getDagenFebruari(jaar)) || (maand == 1 || maand == 3 || maand == 5 || maand == 7 || maand == 8 || maand == 10 || maand == 12 && dag <= 31) || (maand == 4 || maand == 6 || maand == 9 || maand == 11 && dag <= 30)){
-				System.out.println(dag+"/"+maand+"/"+jaar+" bestaat");
+//				System.out.println(dag+"/"+maand+"/"+jaar+" bestaat");
 				return true;
 			}
 		}
-		System.out.println(dag+"/"+maand+"/"+jaar+" bestaat niet");
+//		System.out.println(dag+"/"+maand+"/"+jaar+" bestaat niet");
 		return false;
 	}
 	
