@@ -32,11 +32,6 @@ public class Datum {
 //		System.out.println(dag+"/"+maand+"/"+jaar+" bestaat niet");
 		return false;
 	}
-	
-	/**
-	 * Getter voor Sting weergave van datum
-	 * @return Geboortedatum
-	 */
 
 	public int getDagenFebruari(int jaar) {
 		if (jaar % 4 == 0 && !(jaar % 100 == 0) || jaar % 400 == 0){
@@ -46,11 +41,13 @@ public class Datum {
 //		System.out.println(jaar+": false");
 		return 28;
 	}
-
+	/**
+	 * Getter voor Sting weergave van datum
+	 * @return Geboortedatum
+	 */
 	public String getDatumAsString() {
-		// TODO
-		return "";
-		}
+		return getDag()+"/"+getMaand()+"/"+getJaar();
+	}
 
 	public int getDag() {
 		return dag;
