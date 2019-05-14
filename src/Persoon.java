@@ -2,18 +2,24 @@ public class Persoon {
     private int BSN;
     private String voornaam;
     private String achternaam;
-    private String geboortedatum;
+    private Datum geboortedatum;
     private char geslacht;
 
-    public Persoon(int BSN, String voornaam, String achternaam, String geboortedatum, char geslacht) {
+    public Persoon(int BSN, String voornaam, String achternaam, int geboortedag, int geboortemaand, int geboortejaar, char geslacht) {
+        this();
         this.BSN = BSN;
         this.voornaam = voornaam;
         this.achternaam = achternaam;
-        this.geboortedatum = geboortedatum;
         this.geslacht = geslacht;
+        Datum geboortedatum = new Datum(geboortedag, geboortemaand, geboortejaar);
     }
 
     public Persoon() {
+        BSN = 0;
+        voornaam = "";
+        achternaam = "";
+        geboortedatum = "0/0/0";
+        geslacht = 'o';
     }
 
     public int getBSN() {
@@ -41,7 +47,7 @@ public class Persoon {
     }
 
     public String getGeboortedatum() {
-        return geboortedatum;
+        return geboortedatum.getDatumAsString();;
     }
 
     public void setGeboortedatum(String geboortedatum) {
