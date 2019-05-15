@@ -28,4 +28,12 @@ public class Artikel {
     public void setNaam(String naam) {
         this.naam = naam;
     }
+
+    @Override
+    public String toString() {
+        return "Artikel{" +
+                "prijs=" + prijs +
+                ", naam='" + naam + '\'' +
+                '}';
+    }
 }

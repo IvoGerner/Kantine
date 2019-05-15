@@ -10,15 +10,15 @@ public class Persoon {
         this.BSN = BSN;
         this.voornaam = voornaam;
         this.achternaam = achternaam;
-        this.geslacht = geslacht;
-        Datum geboortedatum = new Datum(geboortedag, geboortemaand, geboortejaar);
+        setGeslacht(geslacht);
+        geboortedatum = new Datum(geboortedag, geboortemaand, geboortejaar);
     }
 
     public Persoon() {
         BSN = 0;
         voornaam = "";
         achternaam = "";
-        geboortedatum = "0/0/0";
+        geboortedatum = new Datum(0,0,0);
         geslacht = 'o';
     }
 
@@ -47,11 +47,13 @@ public class Persoon {
     }
 
     public String getGeboortedatum() {
-        return geboortedatum.getDatumAsString();;
+        return geboortedatum.getDatumAsString();
     }
 
-    public void setGeboortedatum(String geboortedatum) {
-        this.geboortedatum = geboortedatum;
+    public void setGeboortedatum(int geboortedag, int geboortemaand, int geboortejaar) {
+        geboortedatum.setDag(geboortedag);
+        geboortedatum.setMaand(geboortemaand);
+        geboortedatum.setJaar(geboortejaar);
     }
 
     public String getGeslacht() {
@@ -72,5 +74,16 @@ public class Persoon {
         } else {
             this.geslacht = 'o';
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Persoon{" +
+                "BSN=" + BSN +
+                ", voornaam='" + voornaam + '\'' +
+                ", achternaam='" + achternaam + '\'' +
+                ", geboortedatum=" + geboortedatum +
+                ", geslacht=" + geslacht +
+                '}';
     }
 }
