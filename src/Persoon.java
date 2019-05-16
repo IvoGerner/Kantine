@@ -5,6 +5,7 @@ public class Persoon {
     private Datum geboortedatum;
     private char geslacht;
 
+
     public Persoon(int BSN, String voornaam, String achternaam, int geboortedag, int geboortemaand, int geboortejaar, char geslacht) {
         this();
         this.BSN = BSN;
