@@ -3,7 +3,7 @@ import java.util.Iterator;
 import java.util.Stack;
 
 public class Dienblad {
-    private ArrayList<Artikel> artikelen;
+    private Stack<Artikel> artikelen;
     private Persoon klant;
 
     /**
@@ -11,12 +11,12 @@ public class Dienblad {
      */
     public Dienblad(Persoon klant){
         this.klant = klant;
-        artikelen = new ArrayList<>();
+        artikelen = new Stack<>();
     }
 
     public Dienblad() {
         klant = new Persoon();
-        artikelen = new ArrayList<>();
+        artikelen = new Stack<>();
     }
 
     /**
@@ -25,7 +25,7 @@ public class Dienblad {
      * @param artikel
      */
     public void voegToe(Artikel artikel) {
-        artikelen.add(artikel);
+        artikelen.push(artikel);
     }
 
     /**
@@ -57,6 +57,10 @@ public class Dienblad {
 
     public void setKlant(Persoon klant) {
         this.klant = klant;
+    }
+
+    public Stack<Artikel> getArtikelen() {
+        return artikelen;
     }
 }
 

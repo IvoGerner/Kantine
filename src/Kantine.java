@@ -1,42 +1,54 @@
-//public class Kantine {
-//
-//    private Kassa kassa;
-//    private KassaRij kassarij;
-//
-//    /**
-//     * Constructor
-//     */
-//    public Kantine() {
-//        kassarij = new KassaRij();
-//        kassa = new Kassa(kassarij);
-//    }
-//
-//    /**
-//     * In deze methode wordt een Persoon en Dienblad gemaakt
-//     * en aan elkaar gekoppeld. Maak twee Artikelen aan
-//     * en plaats deze op het dienblad. Tenslotte sluit de
-//     * Persoon zich aan bij de rij voor de kassa.
-//     */
-//    public void loopPakSluitAan() {
-//        // method body omitted
-//    }
-//
-//    /**
-//     * Deze methode handelt de rij voor de kassa af.
-//     */
-//    public void verwerkRijVoorKassa() {
-//        while() {
-//            // omitted
-//        }
-//    }
-//
+public class Kantine {
+
+    private Kassa kassa;
+    private KassaRij kassarij;
+
+    /**
+     * Constructor
+     */
+    public Kantine() {
+        kassarij = new KassaRij();
+        kassa = new Kassa(kassarij);
+    }
+
+    /**
+     * In deze methode wordt een Persoon en Dienblad gemaakt
+     * en aan elkaar gekoppeld. Maak twee Artikelen aan
+     * en plaats deze op het dienblad. Tenslotte sluit de
+     * Persoon zich aan bij de rij voor de kassa.
+     */
+    public void loopPakSluitAan() {
+        Persoon jan = new Persoon(981263123, "Jan", "Klaas", 2, 5, 1990, 'm');
+//        Persoon anja = new Persoon(567123456, "Anja", "Bakker", 4, 8, 2003, 'v');
+        Dienblad dienbladJan = new Dienblad(jan);
+//        Dienblad dienbladAnja = new Dienblad(anja);
+        Artikel soep = new Artikel ("Soep", 150);
+        Artikel toasti = new Artikel ("Toasti", 90);
+        dienbladJan.voegToe(soep);
+        dienbladJan.voegToe(toasti);
+        kassarij.sluitAchteraan(dienbladJan);
+    }
+
+    /**
+     * Deze methode handelt de rij voor de kassa af.
+     */
+    public void verwerkRijVoorKassa() {
+        while(kassarij.erIsEenRij()) {
+            kassa.rekenAf(kassarij.eerstePersoonInRij());
+        }
+    }
+
+    public Kassa getKassa(){
+        return kassa;
+    }
+
 //    /**
 //     * Deze methode telt het geld uit de kassa
 //     *
 //     * @return hoeveelheid geld in kassa
 //     */
 //    public double hoeveelheidGeldInKassa() {
-//       // method body omitted
+//        return kassa.hoeveelheidGeldInKassa();
 //    }
 //
 //    /**
@@ -45,7 +57,7 @@
 //     * @return het aantal gepasseerde artikelen
 //     */
 //    public int aantalArtikelen() {
-//        // method body omitted
+//        return kassa.aantalArtikelen();
 //    }
 //
 //    /**
@@ -53,6 +65,6 @@
 //     * het aantal artikelen en "leegt" de inhoud van de kassa.
 //     */
 //    public void resetKassa() {
-//        // method body omitted
+//        kassa.resetKassa();
 //    }
-//}
+}

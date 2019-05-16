@@ -32,6 +32,19 @@ public class Kassa {
         verkochteartikelen += klant.getAantalArtikelen();
     }
 
+//    public double getTotaalPrijs(Dienblad klant){
+//        int totaal = 0;
+//        Iterator it  = klant.getArtikelen().iterator();
+//        while (it.hasNext()){
+//            Object e = it.next();
+//            totaal +=
+//
+//        }
+//
+//        while (Artikel artikel.has)
+//        return (double)totaal/100;
+//    }
+
     /**
      * Geeft het aantal artikelen dat de kassa heeft gepasseerd,
      * vanaf het moment dat de methode resetWaarden is aangeroepen.
