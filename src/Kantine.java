@@ -31,6 +31,7 @@ public class Kantine {
         for (String artiekel : artikelnamen) {
             dienblad.voegToe(kantineAanbod.getArtikel(artiekel));
         }
+        kassarij.sluitAchteraan(dienblad);
 
 //        Persoon jan = new Persoon(981263123, "Jan", "Klaas", 2, 5, 1990, 'm');
 //        Persoon anja = new Persoon(567123456, "Anja", "Bakker", 4, 8, 2003, 'v');

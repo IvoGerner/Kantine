@@ -28,22 +28,26 @@ public class Kassa {
      * @param klant die moet afrekenen
      */
     public void rekenAf(Dienblad klant) {
-        geldinkassa += (int)(klant.getTotaalPrijs()*100);
-        verkochteartikelen += klant.getAantalArtikelen();
+        geldinkassa += (int)(getTotaalPrijs(klant.getArtikel())*100);
+        verkochteartikelen += getAantalArtikelen(klant.getArtikel());
     }
 
-//    public double getTotaalPrijs(Dienblad klant){
-//        int totaal = 0;
-//        Iterator it  = klant.getArtikelen().iterator();
-//        while (it.hasNext()){
-//            Object e = it.next();
-//            totaal +=
-//
-//        }
-//
-//        while (Artikel artikel.has)
-//        return (double)totaal/100;
-//    }
+    public double getTotaalPrijs(Iterator<Artikel> artikelIterator){
+        int totaal = 0;
+        while (artikelIterator.hasNext()){
+            totaal += artikelIterator.next().getPrijs();
+        }
+        return (double)totaal/100;
+    }
+
+    public int getAantalArtikelen(Iterator<Artikel> artikelIterator){
+        int totaal = 0;
+        while(artikelIterator.hasNext()){
+            artikelIterator.next();
+            totaal++;
+        }
+        return totaal;
+    }
 
     /**
      * Geeft het aantal artikelen dat de kassa heeft gepasseerd,

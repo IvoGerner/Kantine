@@ -1,5 +1,7 @@
 Week 1:
     Opdr 1: Klaar (vragen nog uitwerken in doc); comments
+        Declaratie: Ruimte reserveren in het geheugen voor specifiek datatype.
+        Initialisatie: Deze ruimte invullen met een waarde van het voorafgespecifieerde datatype.
     Opdr 2: Klaar; comments
     Opdr 3: Klaar; comments
     Opdr 4: Klaar; comments
@@ -7,14 +9,21 @@ Week 1:
     Opdr 6: Klaar; comments
 
 Week 2:
-    Opdr 1: Klaar (vragen nog uitwerken in doc); comments
+    Opdr 1: Klaar; (vragen nog uitwerken in doc); comments
     Opdr 2: Klaar; comments
     Opdr 3: Klaar; vragen naar LinkedList<Persoon> ipv LinkedList<Dienblad>
-    Opdr 4: Klaar tot d; comments
+    Opdr 4: Klaar; comments
         4a. resetKassa, aantalArtikelen, hoeveelheidGeldInKassa,
-    Opdr 5:
-                heb eerst alle doubles omgezet naar ints
-                text bij opgave komt niet overeen met code die megegeven wordt
-                ik hou de tekst aan
-                DONE! comments
+    Opdr 5: 5d; (vragen nog uitwerken in doc); comments
+        5a. Omdat deze functies alleen bettrekking hebben op de klasse zelf en niet buiten de klasse zinvol gebruikt kunnen worden.
+        5b. HashSet: Geen duplicates toegestaan
+            HashMap: Dictionary; Wanneer twee waarden die bij elkaar horen samen gegeven moeten worden.
     Opdr 6:
+        6a: De constructor maakt een nieuwe kantine aan, met een willekeurige hoeveelheid per artikel en vooraf gespecifieerde artikelnamen en artikelprijzen
+        6b: getRandomValue wordt gebruikt om een int terug te geven tussen de minimale waarde en de maximale waarde.
+            nextInt kan geen 0 zijn dus wanneer de min en max waarden even groot zijn werkt deze nog.
+
+    Datum var in Persoon
+    BSN string
+
+    geboortedatum simulatie check voor constructor

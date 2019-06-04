@@ -1,10 +1,12 @@
+
 public class Main {
 
     public static final int DAGEN = 7;
 
     public static void main(String[] args) {
+//        new Testor2();
 //        new Testor();
-        KantineSimulatie_1 simulatie = new KantineSimulatie_1();
+        KantineSimulatie_2 simulatie = new KantineSimulatie_2();
         int dagen;
 
         if (args.length == 0) {

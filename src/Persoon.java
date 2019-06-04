@@ -6,13 +6,13 @@ public class Persoon {
     private char geslacht;
 
 
-    public Persoon(int BSN, String voornaam, String achternaam, int geboortedag, int geboortemaand, int geboortejaar, char geslacht) {
+    public Persoon(int BSN, String voornaam, String achternaam, Datum geboortedatum, char geslacht) {
         this();
-        this.BSN = BSN;
+        setBSN(BSN);
         this.voornaam = voornaam;
         this.achternaam = achternaam;
         setGeslacht(geslacht);
-        geboortedatum = new Datum(geboortedag, geboortemaand, geboortejaar);
+        geboortedatum = this.geboortedatum;
     }
 
     public Persoon() {
@@ -28,7 +28,11 @@ public class Persoon {
     }
 
     public void setBSN(int BSN) {
-        this.BSN = BSN;
+        if (BSN == 0){
+            this.BSN = 0;
+        } else {
+            this.BSN = BSN;
+        }
     }
 
     public String getVoornaam() {

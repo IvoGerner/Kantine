@@ -33,9 +33,9 @@ public class Dienblad {
      *
      * @return Het aantal artikelen
      */
-    public int getAantalArtikelen() {
-        return artikelen.size();
-    }
+//    public int getAantalArtikelen() {
+//        return artikelen.size();
+//    }
 
     /**
      * Methode om de totaalprijs van de artikelen
@@ -43,13 +43,13 @@ public class Dienblad {
      *
      * @return De totaalprijs
      */
-    public double getTotaalPrijs() {
-        int totaal = 0;
-        for (Artikel artikel: artikelen){
-            totaal += artikel.getPrijs();
-        }
-        return (double)totaal/100;
-    }
+//    public double getTotaalPrijs() {
+//        int totaal = 0;
+//        for (Artikel artikel : artikelen){
+//            totaal += artikel.getPrijs();
+//        }
+//        return (double)totaal/100;
+//    }
 
     public Persoon getKlant() {
         return klant;
@@ -59,8 +59,9 @@ public class Dienblad {
         this.klant = klant;
     }
 
-    public Stack<Artikel> getArtikelen() {
-        return artikelen;
+    public Iterator<Artikel> getArtikel(){
+        Iterator it = artikelen.iterator();
+        return it;
     }
 }
 

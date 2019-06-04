@@ -1,9 +1,9 @@
 public class Testor {
     public Testor() {
-        Kantine kantine = new Kantine();
-        kantine.loopPakSluitAan();
-        kantine.verwerkRijVoorKassa();
-        System.out.println("Geld in kassa: "+kantine.getKassa().hoeveelheidGeldInKassa()+" aantal verkochte artikelen: "+ kantine.getKassa().aantalArtikelen());
+//        Kantine kantine = new Kantine();
+//        kantine.loopPakSluitAan();
+//        kantine.verwerkRijVoorKassa();
+//        System.out.println("Geld in kassa: "+kantine.getKassa().hoeveelheidGeldInKassa()+" aantal verkochte artikelen: "+ kantine.getKassa().aantalArtikelen());
 //        Datum datum = new Datum(29, 2, 2004);
 //        Artikel banaan = new Artikel("Banaan", 100);
 //        Artikel appel = new Artikel ("Appel", 80);
