@@ -1,5 +1,11 @@
 public class Testor {
     public Testor() {
+//        Administratie administratie = new Administratie();
+//        int[] aantal = {45, 56, 34, 39, 40, 31};
+//        double[] omzet = {567.70, 498.25, 458.90};
+//        double gemAantal = administratie.berekenGemiddeldAantal(aantal);
+//        double gemOmzet = administratie.berekenGemiddeldeOmzet(omzet);
+//        System.out.println("Gem omzet = "+gemOmzet+" en gem aantal = "+gemAantal);
 //        Kantine kantine = new Kantine();
 //        kantine.loopPakSluitAan();
 //        kantine.verwerkRijVoorKassa();

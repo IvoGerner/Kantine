@@ -27,3 +27,17 @@ Week 2:
     BSN string
 
     geboortedatum simulatie check voor constructor
+
+Week 3:
+    Opdr 1: Klaar?; comments
+    Opdr 2: Klaar; comments
+        2c. Default is private package, aanroepbaar binnen dezelfde klasse of package
+        2d. Dit kan static zijn omdat de methode bij de klasse hoort en onafhankelijk is van het object.
+        2e. Hiermee wordt voorkomen dat de methoden buiten de klasse worden aangeroepen.
+        2g. Final zorgt dat de waarde een constante wordt, deze kan niet worden aangepast.
+        2h. DAYS_IN_WEEK wordt niet gecompiled  voordat de methode wordt gecompiled. De methode komt iets wat niet bestaat tegen en meldt dit.
+        2i. Het is geen constante meer en kan aangepast worden.
+    Opdr 3: Klaar; comments
+        3d. De super moet eerst om zeker te zijn dat wanneer methodes worden aangeroepen van de parent, dat de parent al goed aangemaakt is.
+    Opdr 4: Klaar; comments
+    Opdr 5: Klaar; comments

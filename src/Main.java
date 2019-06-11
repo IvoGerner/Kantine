@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 //        new Testor2();
-//        new Testor();
+        new Testor();
         KantineSimulatie_2 simulatie = new KantineSimulatie_2();
         int dagen;
 
