@@ -140,7 +140,7 @@ public class KantineSimulatie_2 {
         }
 
         char geslacht;
-        if(random.nextInt(2)<=1){
+        if(random.nextInt(2)==0){
             geslacht = 'm';
         } else {
             geslacht = 'v';
@@ -195,7 +195,7 @@ public class KantineSimulatie_2 {
                 } else {
                     type = "kantinemedewerker";
                 }
-//                System.out.println(maakPersoon(type).toString());
+                System.out.println(maakPersoon(type).toString());
                 Dienblad dienblad = new Dienblad(maakPersoon(type));
                 // en bedenk hoeveel artikelen worden gepakt
                 int aantalartikelen = getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON) ;

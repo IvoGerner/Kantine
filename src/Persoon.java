@@ -74,7 +74,7 @@ public class Persoon {
 
     public void setGeslacht(char geslacht) {
         geslacht = Character.toUpperCase(geslacht);
-        if (geslacht == 'm' || geslacht == 'v') {
+        if (geslacht == 'M' || geslacht == 'V') {
             this.geslacht = geslacht;
         } else {
             this.geslacht = 'o';
