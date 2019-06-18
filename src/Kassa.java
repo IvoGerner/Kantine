@@ -28,8 +28,29 @@ public class Kassa {
      * @param klant die moet afrekenen
      */
     public void rekenAf(Dienblad klant) {
-        geldinkassa += (int)(getTotaalPrijs(klant.getArtikel())*100);
-        verkochteartikelen += getAantalArtikelen(klant.getArtikel());
+        double totaalBedrag = getTotaalPrijs(klant.getArtikel());
+        double korting = 0;
+//        geldinkassa += (int)(getTotaalPrijs(klant.getArtikel())*100);
+//        verkochteartikelen += getAantalArtikelen(klant.getArtikel());
+        if (klant.getKlant() instanceof KortingskaartHouder){
+            KortingskaartHouder kortingPersoon = (KortingskaartHouder) klant.getKlant();
+            korting = totaalBedrag*kortingPersoon.geefKortingsPercentage();
+            if (kortingPersoon.heeftMaximum() && korting>kortingPersoon.geefMaximum()){
+                korting = kortingPersoon.geefMaximum();
+            }
+            totaalBedrag -= korting;
+        }
+        Betaalwijze betaalwijze = klant.getKlant().getBetaalwijze();
+//        try {
+//            betaalwijze.betaal(totaalBedrag);
+//        }
+
+        if(!betaalwijze.betaal(totaalBedrag)){
+            System.out.println("De klant kan niet betalen.");
+        } else {
+            geldinkassa += (int)((totaalBedrag)*100);
+            verkochteartikelen += getAantalArtikelen(klant.getArtikel());
+        }
     }
 
     public double getTotaalPrijs(Iterator<Artikel> artikelIterator){

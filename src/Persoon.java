@@ -4,6 +4,7 @@ public class Persoon {
     private String achternaam;
     private Datum geboortedatum;
     private char geslacht;
+    private Betaalwijze betaalwijze;
 
 
     public Persoon(int BSN, String voornaam, String achternaam, Datum geboortedatum, char geslacht) {
@@ -12,7 +13,7 @@ public class Persoon {
         this.voornaam = voornaam;
         this.achternaam = achternaam;
         setGeslacht(geslacht);
-        geboortedatum = this.geboortedatum;
+        this.geboortedatum = geboortedatum;
     }
 
     public Persoon() {
@@ -79,6 +80,14 @@ public class Persoon {
         } else {
             this.geslacht = 'o';
         }
+    }
+
+    public Betaalwijze getBetaalwijze() {
+        return betaalwijze;
+    }
+
+    public void setBetaalwijze(Betaalwijze betaalwijze) {
+        this.betaalwijze = betaalwijze;
     }
 
     @Override

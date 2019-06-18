@@ -1,4 +1,4 @@
-public class Docent extends Persoon{
+public class Docent extends Persoon implements KortingskaartHouder{
 
     private String afkorting;
     private String afdeling;
@@ -31,5 +31,20 @@ public class Docent extends Persoon{
                 "afkorting='" + afkorting + '\'' +
                 ", afdeling='" + afdeling + '\'' +
                 '}';
+    }
+
+    @Override
+    public double geefKortingsPercentage() {
+        return 0.25;
+    }
+
+    @Override
+    public boolean heeftMaximum() {
+        return true;
+    }
+
+    @Override
+    public double geefMaximum() {
+        return 1;
     }
 }

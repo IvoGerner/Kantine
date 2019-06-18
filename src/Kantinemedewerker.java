@@ -1,9 +1,9 @@
-public class Kantinemedewerker extends Persoon {
+public class Kantinemedewerker extends Persoon implements KortingskaartHouder {
 
     private int medewerkersnummer;
     private boolean kassa;
 
-    public Kantinemedewerker (int BSN, String voornaam, String achternaam, Datum geboortedatum, char geslacht, int medewerkersnummer, boolean kassa){
+    public Kantinemedewerker(int BSN, String voornaam, String achternaam, Datum geboortedatum, char geslacht, int medewerkersnummer, boolean kassa) {
         super(BSN, voornaam, achternaam, geboortedatum, geslacht);
         this.medewerkersnummer = medewerkersnummer;
         this.kassa = kassa;
@@ -31,5 +31,20 @@ public class Kantinemedewerker extends Persoon {
                 "medewerkersnummer=" + medewerkersnummer +
                 ", kassa=" + kassa +
                 '}';
+    }
+
+    @Override
+    public double geefKortingsPercentage() {
+        return 0.35;
+    }
+
+    @Override
+    public boolean heeftMaximum() {
+        return false;
+    }
+
+    @Override
+    public double geefMaximum() {
+        return 0;
     }
 }

@@ -41,3 +41,28 @@ Week 3:
         3d. De super moet eerst om zeker te zijn dat wanneer methodes worden aangeroepen van de parent, dat de parent al goed aangemaakt is.
     Opdr 4: Klaar; comments
     Opdr 5: Klaar; comments
+
+Week 4:
+    Opdr 1: Klaar; comments
+        1c. Hiermee wordt voorkomen dat de variabele buiten de klasse wordt gebruikt en binnen de inheritance blijft.
+    Opdr 2: Klaar; comments
+    Opdr 3: Klaar;
+        3a. Dit kan niet, er moet een instantie gemaakt worden van een klasse die een interface implementeert.
+        3b. Dit kan niet omdat de klasse niet compleet is. Je moet een instantie maken van een klassie die de abstracte klasse extend.
+        3c. Dit kan niet. Het is gelimiteerd tot 1 klasse.
+        3d. Dit kan wel.
+        3e. Dit kan.
+        3f. Een methode in een interface kan abstract, default en static zijn.
+        3g. Een klasse moet abstract zijn zodra er minstens 1 abstracte methode is. Er kan geen instantie gemaakt worden van abstracte klassen.
+        3h. Wanneer een klasse meerdere vormen heeft. Wolf extends Dier implements Carnivoor.
+                A Wolf is-a Dier
+                A Wolf is-a Carnivoor
+                A Wolf is-a Wolf
+                A Wolf is-a Object
+    Opdr 4: Klaar
+        4a. Dit kan. Dit houdt in dat je geen afzonderlijke instantie hiervan kan maken.
+        4b. Dit moet. Het is de bedoeling dat de subklasse hier invulling aan geeft omdat deze die specifieker kan invullen.
+        4c. Implementeer de methode als abstract. De Compiler gaat er dan vanut dat deze ergens anders wordt afgehandeld..
+        4d. Als de parent een variabele heeft, neemt de child het over met zijn eigen instantie.
+        4e. Kan niet worden overridden door subclass. Kan hierdoor ook niet abstract zijn (hierbij mag dat wel)
+    Opdr 5:
