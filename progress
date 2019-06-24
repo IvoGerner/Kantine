@@ -65,4 +65,4 @@ Week 4:
         4c. Implementeer de methode als abstract. De Compiler gaat er dan vanut dat deze ergens anders wordt afgehandeld..
         4d. Als de parent een variabele heeft, neemt de child het over met zijn eigen instantie.
         4e. Kan niet worden overridden door subclass. Kan hierdoor ook niet abstract zijn (hierbij mag dat wel)
-    Opdr 5:
+    Opdr 5: Kassa line 44, Betaalwijze, Contant en Pinpas betaal method boolean -> void

@@ -41,10 +41,6 @@ public class Kassa {
             totaalBedrag -= korting;
         }
         Betaalwijze betaalwijze = klant.getKlant().getBetaalwijze();
-//        try {
-//            betaalwijze.betaal(totaalBedrag);
-//        }
-
         if(!betaalwijze.betaal(totaalBedrag)){
             System.out.println("De klant kan niet betalen.");
         } else {
