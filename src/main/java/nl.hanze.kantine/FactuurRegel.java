@@ -11,18 +11,19 @@ public class FactuurRegel implements Serializable {
     @Column(name ="id", unique = true)
     private Long id;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinTable(name = "factuur_artikel", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "factuur_id"))
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "factuur_id")
     private Factuur factuur;
 
-    @Column(name = "artikel_id")
-    private Artikel artikel;
+
+    @Column(name = "artikel")
+    private String artikel;
 
     public FactuurRegel(){
 
     }
 
-    public FactuurRegel(Factuur factuur, Artikel artikel){
+    public FactuurRegel(Factuur factuur, String artikel){
         this.factuur = factuur;
         this.artikel = artikel;
     }

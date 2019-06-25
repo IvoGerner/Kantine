@@ -3,6 +3,7 @@ package nl.hanze.kantine;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.spi.AbstractResourceBundleProvider;
 
@@ -23,6 +24,10 @@ public class Factuur implements Serializable {
     @Column(name = "totaal", nullable = false)
     private double totaal;
 
+    // @Onetomany
+    @Column(name = "regel_id")
+    private ArrayList<FactuurRegel> regels;
+
 
     public Factuur(){
         totaal = 0;
@@ -38,12 +43,14 @@ public class Factuur implements Serializable {
 
     private void verwerkBestelling(Dienblad klant){
         boolean artikelKorting = false;
-        double kortingArtikel;
+//        double kortingArtikel;
         double localTotaal = 0;
         double localKorting = 0;
         Iterator<Artikel> iter = klant.getArtikel();
         Artikel artikel = klant.getArtikel().next();
         while (iter.hasNext()) {
+            FactuurRegel factuurRegel = new FactuurRegel(this, artikel.getNaam());
+//            regels.add(factuurRegel);
             if (artikel.getKorting() > 0) {
                 localKorting = artikel.getKorting();
                 localTotaal = (double) artikel.getPrijs() / 100 - localKorting;
@@ -84,6 +91,7 @@ public class Factuur implements Serializable {
                 ", datum=" + datum +
                 ", korting=" + korting +
                 ", totaal=" + totaal +
+                ", regels=" + regels +
                 '}';
     }
 }

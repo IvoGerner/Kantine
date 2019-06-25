@@ -51,9 +51,9 @@ public class Kassa {
         EntityTransaction transaction = null;
         try {
             // Get a transaction, sla de factuur gegevens op en commit de transactie
-            betaalwijze.betaal(factuur.getTotaal());
             transaction = manager.getTransaction();
             transaction.begin();
+            betaalwijze.betaal(factuur.getTotaal());
             manager.persist(factuur);
             transaction.commit();
         } catch (TeWeinigGeldException ex) {
