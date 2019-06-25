@@ -51,11 +51,12 @@ public class Kassa {
         EntityTransaction transaction = null;
         try {
             // Get a transaction, sla de factuur gegevens op en commit de transactie
+            betaalwijze.betaal(factuur.getTotaal());
             transaction = manager.getTransaction();
             transaction.begin();
             manager.persist(factuur);
             transaction.commit();
-        } catch (Exception ex) {
+        } catch (TeWeinigGeldException ex) {
             // If there are any exceptions, roll back the changes
             if (transaction != null) {
                 transaction.rollback();

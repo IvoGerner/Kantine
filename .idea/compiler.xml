@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Kantine" target="11" />
+      <module name="Kantine" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
