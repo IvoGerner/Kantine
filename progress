@@ -66,3 +66,17 @@ Week 4:
         4d. Als de parent een variabele heeft, neemt de child het over met zijn eigen instantie.
         4e. Kan niet worden overridden door subclass. Kan hierdoor ook niet abstract zijn (hierbij mag dat wel)
     Opdr 5: Kassa line 44, Betaalwijze, Contant en Pinpas betaal method boolean -> void
+
+Week 5:
+    Opdr 1:
+	1d. @Id geeft aan dat het een PK is, @GeneratedValue genereert een waarde, @Column geeft kolom eigenschappen mee (naam, updatable, unique, nullable etc.)
+	1e. student, student_telefoon, telefoon en studie
+    Opdr 2:
+	2a. Een student kan meerdere telefoons hebben.
+	2b. Er is geen student_studie koppeltabel. Naarmate er meer studenten zijn die bij meer studies ingeschreven staan wordt deze tabel onnodig groot.
+	2c. Door meerdere entiteiten aan te maken waarbij enkel de student_id verschilt.
+	2d. Die is terug te vinden in de student tabel. Deze staan op zichzelf maar kunnen worden toegevoegd aan iets anders.
+    Opdr 3: Dit kan worden toegepast bij betalingen.
+    Opdr 4: 
+
+	
