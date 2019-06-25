@@ -8,6 +8,7 @@ import java.time.LocalDate;
 @Table(name = "factuur")
 public class Factuur implements Serializable {
     @Id
+    @GeneratedValue
     @Column(name ="id", unique = true)
     private Long id;
 
