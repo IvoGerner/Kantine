@@ -3,6 +3,8 @@ package nl.hanze.kantine;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Iterator;
+import java.util.spi.AbstractResourceBundleProvider;
 
 @Entity
 @Table(name = "factuur")
@@ -37,25 +39,31 @@ public class Factuur implements Serializable {
     private void verwerkBestelling(Dienblad klant){
         boolean artikelKorting = false;
         double kortingArtikel;
-        double totaal = 0;
-        double korting = 0;
+        double localTotaal = 0;
+        double localKorting = 0;
+        Iterator<Artikel> iter = klant.getArtikel();
         Artikel artikel = klant.getArtikel().next();
-        if (artikel.getKorting() > 0) {
-            korting = artikel.getKorting();
-            totaal = artikel.getPrijs() - korting;
-            artikelKorting = true;
-        } else {
-            totaal = artikel.getPrijs();
-        }
+        while (iter.hasNext()) {
+            if (artikel.getKorting() > 0) {
+                localKorting = artikel.getKorting();
+                localTotaal = (double) artikel.getPrijs() / 100 - localKorting;
+                artikelKorting = true;
+            } else {
+                localTotaal = (double) artikel.getPrijs() / 100;
+            }
 //        geldinkassa += (int)(getTotaalPrijs(klant.getArtikel())*100);
 //        verkochteartikelen += getAantalArtikelen(klant.getArtikel());
-        if (klant.getKlant() instanceof KortingskaartHouder && !artikelKorting) {
-            KortingskaartHouder kortingPersoon = (KortingskaartHouder) klant.getKlant();
-            korting = totaal * kortingPersoon.geefKortingsPercentage();
-            if (kortingPersoon.heeftMaximum() && korting > kortingPersoon.geefMaximum()) {
-                korting = kortingPersoon.geefMaximum();
+            if (klant.getKlant() instanceof KortingskaartHouder && !artikelKorting) {
+                KortingskaartHouder kortingPersoon = (KortingskaartHouder) klant.getKlant();
+                localKorting = localTotaal * kortingPersoon.geefKortingsPercentage();
+                if (kortingPersoon.heeftMaximum() && localKorting > kortingPersoon.geefMaximum()) {
+                    localKorting = kortingPersoon.geefMaximum();
+                }
+                localTotaal -= localKorting;
             }
-            totaal -= korting;
+            totaal += localTotaal;
+            korting += localKorting;
+            iter.next();
         }
     }
 
